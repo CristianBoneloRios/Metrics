@@ -1,0 +1,98 @@
+{
+  "dashboard": {
+    "title": "CODSP - Servicio Cristian Bonelo",
+    "uid": "cristian-bonelo-servicio-codsp",
+    "tags": ["codsp", "onboarding-qas", "cristian-bonelo", "observabilidad"],
+    "timezone": "browser",
+    "panels": [
+      {
+        "title": "Health Status - Target UP",
+        "type": "stat",
+        "targets": [
+          {
+            "expr": "up{job=\"servicio-codsp-integracion\"}",
+            "legendFormat": "Service Status"
+          }
+        ],
+        "gridPos": {"h": 4, "w": 4, "x": 0, "y": 0}
+      },
+      {
+        "title": "HTTP Requests Rate (5m)",
+        "type": "graph",
+        "targets": [
+          {
+            "expr": "sum(rate(http_requests_total{job=\"servicio-codsp-integracion\"}[5m]))",
+            "legendFormat": "req/s"
+          }
+        ],
+        "gridPos": {"h": 8, "w": 8, "x": 4, "y": 0}
+      },
+      {
+        "title": "HTTP Error Rate (%)",
+        "type": "graph",
+        "targets": [
+          {
+            "expr": "sum(rate(http_requests_total{job=\"servicio-codsp-integracion\",status=~\"5..\"}[5m])) / clamp_min(sum(rate(http_requests_total{job=\"servicio-codsp-integracion\"}[5m])), 1e-9) * 100",
+            "legendFormat": "Error %"
+          }
+        ],
+        "gridPos": {"h": 8, "w": 6, "x": 12, "y": 0}
+      },
+      {
+        "title": "Business Operations - Cristian Bonelo",
+        "type": "graph",
+        "targets": [
+          {
+            "expr": "rate(codsp_operations_total{owner=\"cristian_bonelo\"}[5m])",
+            "legendFormat": "{{operation_type}} - {{status}}"
+          }
+        ],
+        "gridPos": {"h": 8, "w": 12, "x": 0, "y": 8}
+      },
+      {
+        "title": "Documents Processed",
+        "type": "bargauge",
+        "targets": [
+          {
+            "expr": "codsp_documents_processed_total{owner=\"cristian_bonelo\"}",
+            "legendFormat": "{{doc_type}} - {{status}}"
+          }
+        ],
+        "gridPos": {"h": 8, "w": 6, "x": 12, "y": 8}
+      },
+      {
+        "title": "External API Calls",
+        "type": "piechart",
+        "targets": [
+          {
+            "expr": "codsp_external_api_calls_total",
+            "legendFormat": "{{service}} - {{status}}"
+          }
+        ],
+        "gridPos": {"h": 8, "w": 6, "x": 0, "y": 16}
+      },
+      {
+        "title": "Operation Duration P95",
+        "type": "graph",
+        "targets": [
+          {
+            "expr": "histogram_quantile(0.95, sum(rate(codsp_operation_duration_seconds_bucket[5m])) by (le, operation_type))",
+            "legendFormat": "{{operation_type}} - P95"
+          }
+        ],
+        "gridPos": {"h": 8, "w": 12, "x": 6, "y": 16}
+      },
+      {
+        "title": "Service Info - Owner Metrics",
+        "type": "table",
+        "targets": [
+          {
+            "expr": "codsp_operations_total",
+            "format": "table"
+          }
+        ],
+        "gridPos": {"h": 8, "w": 6, "x": 0, "y": 24}
+      }
+    ]
+  }
+}
