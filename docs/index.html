@@ -1,90 +1,235 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CODSP Static Metrics</title>
+  <title>CODSP Remote Control Center</title>
   <style>
     :root {
-      --bg: #0b1220;
-      --card: #111a2d;
-      --text: #e5ecff;
-      --muted: #9fb0d6;
-      --accent: #3ddc97;
-      --link: #79b8ff;
+      --bg: #0f1511;
+      --card: #16201a;
+      --text: #e8f3e6;
+      --muted: #a7c3aa;
+      --accent: #79e08e;
+      --link: #9ad7ff;
+      --line: #294033;
     }
     body {
       margin: 0;
       min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      gap: 24px;
-      background: radial-gradient(circle at 20% 0%, #1a2440 0%, var(--bg) 50%);
+      background: radial-gradient(circle at 10% 0%, #243328 0%, var(--bg) 58%);
       color: var(--text);
       font-family: Segoe UI, Tahoma, sans-serif;
     }
     .card {
-      width: min(760px, 92vw);
+      width: min(1080px, 94vw);
+      margin: 24px auto;
       background: var(--card);
-      border: 1px solid #22355e;
+      border: 1px solid var(--line);
       border-radius: 16px;
       padding: 24px;
-      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.30);
     }
-    h1 {
-      margin: 0 0 10px;
-      font-size: 1.6rem;
-    }
-    p {
-      color: var(--muted);
-      line-height: 1.5;
-    }
-    .ok {
-      color: var(--accent);
-      font-weight: 700;
-    }
-    a {
-      color: var(--link);
-    }
-    code {
-      background: #0b1325;
-      border: 1px solid #22355e;
-      border-radius: 8px;
-      padding: 2px 6px;
-      color: #d8e4ff;
-    }
-    footer {
-      font-size: 0.85rem;
-      color: var(--muted);
-      text-align: center;
-      opacity: 0.9;
-    }
-    footer strong {
+    h1 { margin: 0 0 10px; font-size: 1.6rem; }
+    h2 { margin: 22px 0 10px; font-size: 1.1rem; }
+    p, li { color: var(--muted); line-height: 1.5; }
+    .hero { display: grid; gap: 10px; margin: 18px 0 14px; }
+    .semaphore { border-radius: 18px; padding: 18px; border: 1px solid var(--line); background: #111914; }
+    .semaphore-label { font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); }
+    .semaphore-value { margin-top: 6px; font-size: 2rem; font-weight: 800; }
+    .semaphore-sub { margin-top: 6px; color: var(--muted); font-size: 0.95rem; }
+    .sem-ready { background: linear-gradient(135deg, #173222, #1d4d2f); border-color: #3b7d52; }
+    .sem-local { background: linear-gradient(135deg, #2a2e18, #4f4422); border-color: #8f7b3a; }
+    .sem-fail { background: linear-gradient(135deg, #351616, #5a2323); border-color: #8f4040; }
+    .explanation, .note { border: 1px solid var(--line); border-radius: 12px; padding: 12px; background: #101712; color: var(--muted); line-height: 1.5; }
+    .row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 12px; }
+    .btn, button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: #23432d;
       color: var(--text);
+      border: 1px solid #3e7250;
+      border-radius: 10px;
+      padding: 10px 14px;
+      cursor: pointer;
+      font-weight: 600;
+      text-decoration: none;
     }
+    button:hover, .btn:hover { filter: brightness(1.08); }
+    button:disabled { opacity: 0.6; cursor: not-allowed; }
+    .status-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 10px; margin-top: 12px; }
+    .status-card { border: 1px solid var(--line); border-radius: 12px; padding: 10px; background: #131c16; }
+    .badge { display: inline-block; border-radius: 999px; padding: 2px 8px; font-size: 0.8rem; font-weight: 700; margin-left: 6px; }
+    .ok-b { background: #1f4e2f; color: #adf3bf; }
+    .bad-b { background: #5a1f1f; color: #ffc0c0; }
+    .muted-b { background: #3d3d3d; color: #ddd; }
+    .log { margin-top: 12px; border: 1px solid var(--line); border-radius: 12px; background: #0d1310; padding: 10px; height: 280px; overflow: auto; white-space: pre-wrap; color: #d7e9da; font-family: Consolas, monospace; font-size: 0.87rem; }
+    code { background: #0d1310; border: 1px solid var(--line); border-radius: 8px; padding: 2px 6px; color: #d8efd8; }
+    a { color: var(--link); }
+    ul { padding-left: 18px; }
   </style>
 </head>
 <body>
-
   <main class="card">
-    <h1>CODSP Static Metrics Endpoint</h1>
-    <p class="ok">GitHub Pages is active.</p>
-    <p>
-      Prometheus metrics file:
-      <a href="./metrics.prom">metrics.prom</a>
-    </p>
-    <p>
-      URL expected for CODSP registration:
-      <code>/Metrics/metrics.prom</code>
-    </p>
+    <h1>CODSP Remote Control Center</h1>
+    <p>Esta página está alojada en GitHub Pages. Consulta el servicio local en <code>http://localhost:8080</code> si ya lo levantaste en la máquina actual.</p>
+
+    <div class="note">
+      GitHub Pages no puede iniciar procesos locales directamente por restricciones del navegador. Para arrancar el servicio en una máquina clonada, ejecuta <code>.\setup.ps1 -Action run</code> o <code>.\service\run.ps1</code> dentro del repo clonado.
+    </div>
+
+    <section class="hero">
+      <div id="semaphore" class="semaphore sem-local">
+        <div class="semaphore-label">Estado General</div>
+        <div id="semaphoreValue" class="semaphore-value">Local OK</div>
+        <div id="semaphoreSub" class="semaphore-sub">Esperando una prueba completa QAS para confirmar observabilidad real.</div>
+      </div>
+      <div id="explanation" class="explanation">
+        Si el repo ya está clonado y el servicio está arriba, desde esta página puedes consultar estado y lanzar pruebas contra el backend local.
+      </div>
+    </section>
+
+    <h2>Acciones</h2>
+    <div class="row">
+      <button id="btnRefresh">Actualizar estado</button>
+      <button id="btnRunLocal">Ejecutar prueba local</button>
+      <button id="btnRunFull">Ejecutar prueba completa QAS</button>
+      <a class="btn" href="http://127.0.0.1:8080/ui/" target="_blank" rel="noopener">Abrir UI local</a>
+      <a class="btn" href="http://127.0.0.1:8080/metrics" target="_blank" rel="noopener">Abrir metrics local</a>
+      <a class="btn" href="./metrics.prom">Ver metrics.prom</a>
+    </div>
+
+    <h2>Cómo levantarlo en una máquina clonada</h2>
+    <ul>
+      <li>Clona el repo.</li>
+      <li>Abre PowerShell en la raíz del proyecto.</li>
+      <li>Ejecuta <code>.\setup.ps1 -Action run</code> o <code>.\service\run.ps1</code>.</li>
+      <li>Después vuelve aquí y usa Actualizar estado o las pruebas.</li>
+    </ul>
+
+    <h2>Estado de Servicios</h2>
+    <div id="status" class="status-grid"></div>
+
+    <h2>Salida de la Prueba</h2>
+    <div id="log" class="log">Sin ejecuciones por ahora.</div>
   </main>
 
-  <footer>
-    POWERED BY <strong>Cristian Bonelo</strong> — SOFTWARE QUALITY ANALYST<br>
-    DEVELOPMENT &amp; INNOVATION
-  </footer>
+  <script>
+    const API_BASE = 'http://127.0.0.1:8080';
+    const statusEl = document.getElementById('status');
+    const logEl = document.getElementById('log');
+    const semaphoreEl = document.getElementById('semaphore');
+    const semaphoreValueEl = document.getElementById('semaphoreValue');
+    const semaphoreSubEl = document.getElementById('semaphoreSub');
+    const explanationEl = document.getElementById('explanation');
+    const btnRunLocal = document.getElementById('btnRunLocal');
+    const btnRunFull = document.getElementById('btnRunFull');
+    const btnRefresh = document.getElementById('btnRefresh');
+    let lastStatus = null;
+    let lastRun = null;
 
+    function esc(v) {
+      return String(v ?? '').replace(/[&<>]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;' }[c]));
+    }
+
+    function badge(ok) {
+      if (ok === true) return '<span class="badge ok-b">UP</span>';
+      if (ok === false) return '<span class="badge bad-b">DOWN</span>';
+      return '<span class="badge muted-b">N/A</span>';
+    }
+
+    function setSemaphore(kind, title, subtitle) {
+      semaphoreEl.className = 'semaphore ' + kind;
+      semaphoreValueEl.textContent = title;
+      semaphoreSubEl.textContent = subtitle;
+    }
+
+    function updateHero() {
+      const services = (lastStatus && lastStatus.services) || {};
+      const localOk = Boolean(services.local_service_tcp && services.local_service_tcp.ok);
+      const qasVisible = Boolean(services.prometheus && services.prometheus.ok);
+
+      if (!localOk) {
+        setSemaphore('sem-fail', 'Local FAIL', 'El servicio local no responde. Primero ejecútalo en la máquina clonada.');
+      } else if (lastRun && lastRun.mode === 'full' && lastRun.ok) {
+        setSemaphore('sem-ready', 'Ready', 'La prueba completa QAS pasó: servicio local OK y observabilidad real confirmada.');
+      } else if (lastRun && lastRun.mode === 'full' && !lastRun.ok) {
+        setSemaphore('sem-local', 'Local OK / QAS FAIL', 'La app local responde, pero QAS todavía no confirma observabilidad o el acceso sigue bloqueado.');
+      } else if (qasVisible) {
+        setSemaphore('sem-ready', 'Ready', 'Prometheus responde y el servicio local está arriba.');
+      } else {
+        setSemaphore('sem-local', 'Local OK', 'El servicio local está arriba, pero aún falta confirmación real de observabilidad en QAS.');
+      }
+
+      if (!lastRun) {
+        explanationEl.textContent = 'Usa Actualizar estado para comprobar si localhost está activo. Luego ejecuta una prueba local o completa QAS según lo que quieras validar.';
+        return;
+      }
+
+      if (lastRun.mode === 'local' && lastRun.ok) {
+        explanationEl.textContent = 'La prueba local pasó. Esta máquina está generando métricas y respondiendo correctamente, pero esto no prueba por sí solo que QAS las vea.';
+      } else if (lastRun.mode === 'local' && !lastRun.ok) {
+        explanationEl.textContent = 'La prueba local falló. Hay un problema en el servicio o en la generación de métricas dentro de esta máquina.';
+      } else if (lastRun.mode === 'full' && lastRun.ok) {
+        explanationEl.textContent = 'La prueba completa QAS pasó. Eso significa que la máquina local funciona y además Prometheus/QAS ve las métricas reales.';
+      } else if (lastRun.mode === 'full' && !lastRun.ok) {
+        explanationEl.textContent = 'La prueba completa QAS falló. El servicio puede estar bien localmente, pero QAS no confirma visibilidad o la red sigue bloqueando Prometheus.';
+      }
+    }
+
+    async function loadStatus() {
+      try {
+        const r = await fetch(API_BASE + '/qa/status');
+        const data = await r.json();
+        lastStatus = data;
+        const blocks = [];
+        for (const [name, info] of Object.entries(data.services || {})) {
+          blocks.push(
+            '<div class="status-card">' +
+              '<strong>' + esc(name) + '</strong> ' + badge(info.ok) + '<br>' +
+              'code: ' + esc(info.status_code ?? '-') + '<br>' +
+              'latency: ' + esc(info.latency_ms ?? '-') + ' ms<br>' +
+              '<small>' + esc(info.url || '') + '</small>' +
+              (info.error ? '<br><small style="color:#ffb8b8">' + esc(info.error) + '</small>' : '') +
+            '</div>'
+          );
+        }
+        statusEl.innerHTML = blocks.join('');
+      } catch (e) {
+        statusEl.innerHTML = '<div class="status-card"><strong>No se pudo consultar localhost</strong><br>Levanta el servicio con .\\setup.ps1 -Action run y vuelve a intentar.<br><small>' + esc(e.message) + '</small></div>';
+      } finally {
+        updateHero();
+      }
+    }
+
+    async function runSuite(mode) {
+      btnRunLocal.disabled = true;
+      btnRunFull.disabled = true;
+      logEl.textContent = mode === 'local' ? 'Ejecutando suite local...' : 'Ejecutando suite completa QAS...';
+      try {
+        const r = await fetch(API_BASE + '/qa/run-metrics-test?mode=' + encodeURIComponent(mode), { method: 'POST' });
+        const data = await r.json();
+        lastRun = { mode, ok: data.ok, exit_code: data.exit_code };
+        const head = 'mode=' + (data.mode || mode) + ' | ok=' + data.ok + ' | exit_code=' + data.exit_code + '\n';
+        const err = data.stderr ? ('\n[stderr]\n' + data.stderr) : '';
+        logEl.textContent = head + (data.stdout || '') + err;
+      } catch (e) {
+        lastRun = { mode, ok: false, exit_code: -1 };
+        logEl.textContent = 'Error ejecutando suite contra localhost: ' + e.message;
+      } finally {
+        btnRunLocal.disabled = false;
+        btnRunFull.disabled = false;
+        updateHero();
+        loadStatus();
+      }
+    }
+
+    btnRunLocal.addEventListener('click', () => runSuite('local'));
+    btnRunFull.addEventListener('click', () => runSuite('full'));
+    btnRefresh.addEventListener('click', loadStatus);
+    loadStatus();
+    setInterval(loadStatus, 10000);
+  </script>
 </body>
 </html>
