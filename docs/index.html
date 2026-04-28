@@ -16,8 +16,11 @@
     body {
       margin: 0;
       min-height: 100vh;
-      display: grid;
-      place-items: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 24px;
       background: radial-gradient(circle at 20% 0%, #1a2440 0%, var(--bg) 50%);
       color: var(--text);
       font-family: Segoe UI, Tahoma, sans-serif;
@@ -52,9 +55,19 @@
       padding: 2px 6px;
       color: #d8e4ff;
     }
+    footer {
+      font-size: 0.85rem;
+      color: var(--muted);
+      text-align: center;
+      opacity: 0.9;
+    }
+    footer strong {
+      color: var(--text);
+    }
   </style>
 </head>
 <body>
+
   <main class="card">
     <h1>CODSP Static Metrics Endpoint</h1>
     <p class="ok">GitHub Pages is active.</p>
@@ -67,5 +80,11 @@
       <code>/Metrics/metrics.prom</code>
     </p>
   </main>
+
+  <footer>
+    POWERED BY <strong>Cristian Bonelo</strong> — SOFTWARE QUALITY ANALYST<br>
+    DEVELOPMENT &amp; INNOVATION
+  </footer>
+
 </body>
 </html>
