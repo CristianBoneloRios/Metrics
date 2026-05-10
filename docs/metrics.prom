@@ -1,6 +1,6 @@
 # Static Prometheus exposition for GitHub Pages.
 # Generated automatically by scripts/generate_metrics_prom.py.
-# generated_at 2026-05-10T18:37:02Z
+# generated_at 2026-05-10T19:44:09Z
 # Note: Prometheus generates the up{} metric during scraping; it is not defined here.
 
 # HELP codsp_service_info Informacion del servicio CODSP publicada desde GitHub Pages
@@ -9,134 +9,134 @@ codsp_service_info{environment="qas",owner="Cristian Bonelo",project="onboarding
 
 # HELP codsp_operations_total Total de operaciones procesadas
 # TYPE codsp_operations_total counter
-codsp_operations_total{operation_type="document_processing",owner="cristian_bonelo",status="success"} 2292.0
+codsp_operations_total{operation_type="document_processing",owner="cristian_bonelo",status="success"} 2302.0
 codsp_operations_total{operation_type="document_processing",owner="cristian_bonelo",status="error"} 70.0
 
 # HELP codsp_operation_duration_seconds Duracion de operaciones en segundos
 # TYPE codsp_operation_duration_seconds histogram
 codsp_operation_duration_seconds_bucket{operation_type="document_processing",le="0.01"} 0.0
-codsp_operation_duration_seconds_bucket{operation_type="document_processing",le="0.05"} 189.0
-codsp_operation_duration_seconds_bucket{operation_type="document_processing",le="0.1"} 614.0
-codsp_operation_duration_seconds_bucket{operation_type="document_processing",le="0.25"} 1984.0
-codsp_operation_duration_seconds_bucket{operation_type="document_processing",le="0.5"} 2315.0
-codsp_operation_duration_seconds_bucket{operation_type="document_processing",le="1.0"} 2362.0
-codsp_operation_duration_seconds_bucket{operation_type="document_processing",le="2.5"} 2362.0
-codsp_operation_duration_seconds_bucket{operation_type="document_processing",le="5.0"} 2362.0
-codsp_operation_duration_seconds_bucket{operation_type="document_processing",le="10.0"} 2362.0
-codsp_operation_duration_seconds_bucket{operation_type="document_processing",le="30.0"} 2362.0
-codsp_operation_duration_seconds_bucket{operation_type="document_processing",le="60.0"} 2362.0
-codsp_operation_duration_seconds_bucket{operation_type="document_processing",le="+Inf"} 2362.0
-codsp_operation_duration_seconds_count{operation_type="document_processing"} 2362.0
-codsp_operation_duration_seconds_sum{operation_type="document_processing"} 432.246
+codsp_operation_duration_seconds_bucket{operation_type="document_processing",le="0.05"} 190.0
+codsp_operation_duration_seconds_bucket{operation_type="document_processing",le="0.1"} 617.0
+codsp_operation_duration_seconds_bucket{operation_type="document_processing",le="0.25"} 1992.0
+codsp_operation_duration_seconds_bucket{operation_type="document_processing",le="0.5"} 2325.0
+codsp_operation_duration_seconds_bucket{operation_type="document_processing",le="1.0"} 2372.0
+codsp_operation_duration_seconds_bucket{operation_type="document_processing",le="2.5"} 2372.0
+codsp_operation_duration_seconds_bucket{operation_type="document_processing",le="5.0"} 2372.0
+codsp_operation_duration_seconds_bucket{operation_type="document_processing",le="10.0"} 2372.0
+codsp_operation_duration_seconds_bucket{operation_type="document_processing",le="30.0"} 2372.0
+codsp_operation_duration_seconds_bucket{operation_type="document_processing",le="60.0"} 2372.0
+codsp_operation_duration_seconds_bucket{operation_type="document_processing",le="+Inf"} 2372.0
+codsp_operation_duration_seconds_count{operation_type="document_processing"} 2372.0
+codsp_operation_duration_seconds_sum{operation_type="document_processing"} 434.076
 # HELP codsp_operation_duration_seconds Duracion de operaciones en segundos
 # TYPE codsp_operation_duration_seconds histogram
 codsp_operation_duration_seconds_bucket{operation_type="background_reindex",le="0.01"} 0.0
 codsp_operation_duration_seconds_bucket{operation_type="background_reindex",le="0.05"} 0.0
 codsp_operation_duration_seconds_bucket{operation_type="background_reindex",le="0.1"} 34.0
-codsp_operation_duration_seconds_bucket{operation_type="background_reindex",le="0.25"} 386.0
-codsp_operation_duration_seconds_bucket{operation_type="background_reindex",le="0.5"} 420.0
-codsp_operation_duration_seconds_bucket{operation_type="background_reindex",le="1.0"} 420.0
-codsp_operation_duration_seconds_bucket{operation_type="background_reindex",le="2.5"} 420.0
-codsp_operation_duration_seconds_bucket{operation_type="background_reindex",le="5.0"} 420.0
-codsp_operation_duration_seconds_bucket{operation_type="background_reindex",le="10.0"} 420.0
-codsp_operation_duration_seconds_bucket{operation_type="background_reindex",le="30.0"} 420.0
-codsp_operation_duration_seconds_bucket{operation_type="background_reindex",le="60.0"} 420.0
-codsp_operation_duration_seconds_bucket{operation_type="background_reindex",le="+Inf"} 420.0
-codsp_operation_duration_seconds_count{operation_type="background_reindex"} 420.0
-codsp_operation_duration_seconds_sum{operation_type="background_reindex"} 95.76
+codsp_operation_duration_seconds_bucket{operation_type="background_reindex",le="0.25"} 388.0
+codsp_operation_duration_seconds_bucket{operation_type="background_reindex",le="0.5"} 422.0
+codsp_operation_duration_seconds_bucket{operation_type="background_reindex",le="1.0"} 422.0
+codsp_operation_duration_seconds_bucket{operation_type="background_reindex",le="2.5"} 422.0
+codsp_operation_duration_seconds_bucket{operation_type="background_reindex",le="5.0"} 422.0
+codsp_operation_duration_seconds_bucket{operation_type="background_reindex",le="10.0"} 422.0
+codsp_operation_duration_seconds_bucket{operation_type="background_reindex",le="30.0"} 422.0
+codsp_operation_duration_seconds_bucket{operation_type="background_reindex",le="60.0"} 422.0
+codsp_operation_duration_seconds_bucket{operation_type="background_reindex",le="+Inf"} 422.0
+codsp_operation_duration_seconds_count{operation_type="background_reindex"} 422.0
+codsp_operation_duration_seconds_sum{operation_type="background_reindex"} 96.216
 
 # HELP codsp_documents_processed_total Total de documentos procesados
 # TYPE codsp_documents_processed_total counter
-codsp_documents_processed_total{doc_type="invoice",owner="cristian_bonelo",status="success"} 1467.0
-codsp_documents_processed_total{doc_type="contract",owner="cristian_bonelo",status="success"} 825.0
+codsp_documents_processed_total{doc_type="invoice",owner="cristian_bonelo",status="success"} 1473.0
+codsp_documents_processed_total{doc_type="contract",owner="cristian_bonelo",status="success"} 829.0
 codsp_documents_processed_total{doc_type="invoice",owner="cristian_bonelo",status="error"} 35.0
 codsp_documents_processed_total{doc_type="contract",owner="cristian_bonelo",status="error"} 35.0
 
 # HELP codsp_document_size_bytes Tamano de documentos en bytes
 # TYPE codsp_document_size_bytes histogram
 codsp_document_size_bytes_bucket{doc_type="invoice",le="1024.0"} 0.0
-codsp_document_size_bytes_bucket{doc_type="invoice",le="10240.0"} 264.0
-codsp_document_size_bytes_bucket{doc_type="invoice",le="102400.0"} 1291.0
-codsp_document_size_bytes_bucket{doc_type="invoice",le="1.048576e+06"} 1467.0
-codsp_document_size_bytes_bucket{doc_type="invoice",le="1.048576e+07"} 1467.0
-codsp_document_size_bytes_bucket{doc_type="invoice",le="1.048576e+08"} 1467.0
-codsp_document_size_bytes_bucket{doc_type="invoice",le="+Inf"} 1467.0
-codsp_document_size_bytes_count{doc_type="invoice"} 1467.0
-codsp_document_size_bytes_sum{doc_type="invoice"} 26758080.0
+codsp_document_size_bytes_bucket{doc_type="invoice",le="10240.0"} 265.0
+codsp_document_size_bytes_bucket{doc_type="invoice",le="102400.0"} 1296.0
+codsp_document_size_bytes_bucket{doc_type="invoice",le="1.048576e+06"} 1473.0
+codsp_document_size_bytes_bucket{doc_type="invoice",le="1.048576e+07"} 1473.0
+codsp_document_size_bytes_bucket{doc_type="invoice",le="1.048576e+08"} 1473.0
+codsp_document_size_bytes_bucket{doc_type="invoice",le="+Inf"} 1473.0
+codsp_document_size_bytes_count{doc_type="invoice"} 1473.0
+codsp_document_size_bytes_sum{doc_type="invoice"} 26867520.0
 # HELP codsp_document_size_bytes Tamano de documentos en bytes
 # TYPE codsp_document_size_bytes histogram
 codsp_document_size_bytes_bucket{doc_type="contract",le="1024.0"} 0.0
 codsp_document_size_bytes_bucket{doc_type="contract",le="10240.0"} 99.0
-codsp_document_size_bytes_bucket{doc_type="contract",le="102400.0"} 594.0
-codsp_document_size_bytes_bucket{doc_type="contract",le="1.048576e+06"} 825.0
-codsp_document_size_bytes_bucket{doc_type="contract",le="1.048576e+07"} 825.0
-codsp_document_size_bytes_bucket{doc_type="contract",le="1.048576e+08"} 825.0
-codsp_document_size_bytes_bucket{doc_type="contract",le="+Inf"} 825.0
-codsp_document_size_bytes_count{doc_type="contract"} 825.0
-codsp_document_size_bytes_sum{doc_type="contract"} 38610000.0
+codsp_document_size_bytes_bucket{doc_type="contract",le="102400.0"} 597.0
+codsp_document_size_bytes_bucket{doc_type="contract",le="1.048576e+06"} 829.0
+codsp_document_size_bytes_bucket{doc_type="contract",le="1.048576e+07"} 829.0
+codsp_document_size_bytes_bucket{doc_type="contract",le="1.048576e+08"} 829.0
+codsp_document_size_bytes_bucket{doc_type="contract",le="+Inf"} 829.0
+codsp_document_size_bytes_count{doc_type="contract"} 829.0
+codsp_document_size_bytes_sum{doc_type="contract"} 38797200.0
 
 # HELP codsp_external_api_calls_total Total de llamadas a APIs externas
 # TYPE codsp_external_api_calls_total counter
-codsp_external_api_calls_total{endpoint="status",service="payments",status="success"} 632.0
-codsp_external_api_calls_total{endpoint="register",service="catalog",status="success"} 246.0
+codsp_external_api_calls_total{endpoint="status",service="payments",status="success"} 635.0
+codsp_external_api_calls_total{endpoint="register",service="catalog",status="success"} 247.0
 codsp_external_api_calls_total{endpoint="status",service="payments",status="error"} 14.0
 codsp_external_api_calls_total{endpoint="register",service="catalog",status="error"} 26.0
 
 # HELP codsp_external_api_duration_seconds Duracion de llamadas a APIs externas
 # TYPE codsp_external_api_duration_seconds histogram
 codsp_external_api_duration_seconds_bucket{endpoint="status",service="payments",le="0.1"} 26.0
-codsp_external_api_duration_seconds_bucket{endpoint="status",service="payments",le="0.5"} 530.0
-codsp_external_api_duration_seconds_bucket{endpoint="status",service="payments",le="1.0"} 620.0
-codsp_external_api_duration_seconds_bucket{endpoint="status",service="payments",le="2.0"} 646.0
-codsp_external_api_duration_seconds_bucket{endpoint="status",service="payments",le="5.0"} 646.0
-codsp_external_api_duration_seconds_bucket{endpoint="status",service="payments",le="10.0"} 646.0
-codsp_external_api_duration_seconds_bucket{endpoint="status",service="payments",le="30.0"} 646.0
-codsp_external_api_duration_seconds_bucket{endpoint="status",service="payments",le="+Inf"} 646.0
-codsp_external_api_duration_seconds_count{endpoint="status",service="payments"} 646.0
-codsp_external_api_duration_seconds_sum{endpoint="status",service="payments"} 235.144
+codsp_external_api_duration_seconds_bucket{endpoint="status",service="payments",le="0.5"} 532.0
+codsp_external_api_duration_seconds_bucket{endpoint="status",service="payments",le="1.0"} 623.0
+codsp_external_api_duration_seconds_bucket{endpoint="status",service="payments",le="2.0"} 649.0
+codsp_external_api_duration_seconds_bucket{endpoint="status",service="payments",le="5.0"} 649.0
+codsp_external_api_duration_seconds_bucket{endpoint="status",service="payments",le="10.0"} 649.0
+codsp_external_api_duration_seconds_bucket{endpoint="status",service="payments",le="30.0"} 649.0
+codsp_external_api_duration_seconds_bucket{endpoint="status",service="payments",le="+Inf"} 649.0
+codsp_external_api_duration_seconds_count{endpoint="status",service="payments"} 649.0
+codsp_external_api_duration_seconds_sum{endpoint="status",service="payments"} 236.236
 # HELP codsp_external_api_duration_seconds Duracion de llamadas a APIs externas
 # TYPE codsp_external_api_duration_seconds histogram
 codsp_external_api_duration_seconds_bucket{endpoint="register",service="catalog",le="0.1"} 5.0
-codsp_external_api_duration_seconds_bucket{endpoint="register",service="catalog",le="0.5"} 201.0
-codsp_external_api_duration_seconds_bucket{endpoint="register",service="catalog",le="1.0"} 256.0
-codsp_external_api_duration_seconds_bucket{endpoint="register",service="catalog",le="2.0"} 272.0
-codsp_external_api_duration_seconds_bucket{endpoint="register",service="catalog",le="5.0"} 272.0
-codsp_external_api_duration_seconds_bucket{endpoint="register",service="catalog",le="10.0"} 272.0
-codsp_external_api_duration_seconds_bucket{endpoint="register",service="catalog",le="30.0"} 272.0
-codsp_external_api_duration_seconds_bucket{endpoint="register",service="catalog",le="+Inf"} 272.0
-codsp_external_api_duration_seconds_count{endpoint="register",service="catalog"} 272.0
-codsp_external_api_duration_seconds_sum{endpoint="register",service="catalog"} 168.912
+codsp_external_api_duration_seconds_bucket{endpoint="register",service="catalog",le="0.5"} 202.0
+codsp_external_api_duration_seconds_bucket{endpoint="register",service="catalog",le="1.0"} 257.0
+codsp_external_api_duration_seconds_bucket{endpoint="register",service="catalog",le="2.0"} 273.0
+codsp_external_api_duration_seconds_bucket{endpoint="register",service="catalog",le="5.0"} 273.0
+codsp_external_api_duration_seconds_bucket{endpoint="register",service="catalog",le="10.0"} 273.0
+codsp_external_api_duration_seconds_bucket{endpoint="register",service="catalog",le="30.0"} 273.0
+codsp_external_api_duration_seconds_bucket{endpoint="register",service="catalog",le="+Inf"} 273.0
+codsp_external_api_duration_seconds_count{endpoint="register",service="catalog"} 273.0
+codsp_external_api_duration_seconds_sum{endpoint="register",service="catalog"} 169.533
 
 # HELP codsp_queue_tasks_total Total de tareas en cola procesadas
 # TYPE codsp_queue_tasks_total counter
-codsp_queue_tasks_total{status="success",task_type="reindex"} 272.0
-codsp_queue_tasks_total{status="success",task_type="sync"} 116.0
+codsp_queue_tasks_total{status="success",task_type="reindex"} 273.0
+codsp_queue_tasks_total{status="success",task_type="sync"} 117.0
 codsp_queue_tasks_total{status="error",task_type="reindex"} 16.0
 codsp_queue_tasks_total{status="error",task_type="sync"} 16.0
 
 # HELP codsp_active_tasks Tareas activas actualmente
 # TYPE codsp_active_tasks gauge
-codsp_active_tasks 1.0
+codsp_active_tasks 2.0
 
 # HELP codsp_ai_executions_total Total de ejecuciones de IA/agentes
 # TYPE codsp_ai_executions_total counter
-codsp_ai_executions_total{agent_type="summarizer",status="success"} 194.0
+codsp_ai_executions_total{agent_type="summarizer",status="success"} 195.0
 codsp_ai_executions_total{agent_type="classifier",status="success"} 96.0
 codsp_ai_executions_total{agent_type="summarizer",status="error"} 7.0
 codsp_ai_executions_total{agent_type="classifier",status="error"} 20.0
 
 # HELP codsp_ai_execution_duration_seconds Duracion de ejecuciones de IA
 # TYPE codsp_ai_execution_duration_seconds histogram
-codsp_ai_execution_duration_seconds_bucket{agent_type="summarizer",le="1.0"} 64.0
-codsp_ai_execution_duration_seconds_bucket{agent_type="summarizer",le="5.0"} 201.0
-codsp_ai_execution_duration_seconds_bucket{agent_type="summarizer",le="10.0"} 201.0
-codsp_ai_execution_duration_seconds_bucket{agent_type="summarizer",le="30.0"} 201.0
-codsp_ai_execution_duration_seconds_bucket{agent_type="summarizer",le="60.0"} 201.0
-codsp_ai_execution_duration_seconds_bucket{agent_type="summarizer",le="120.0"} 201.0
-codsp_ai_execution_duration_seconds_bucket{agent_type="summarizer",le="300.0"} 201.0
-codsp_ai_execution_duration_seconds_bucket{agent_type="summarizer",le="+Inf"} 201.0
-codsp_ai_execution_duration_seconds_count{agent_type="summarizer"} 201.0
-codsp_ai_execution_duration_seconds_sum{agent_type="summarizer"} 249.24
+codsp_ai_execution_duration_seconds_bucket{agent_type="summarizer",le="1.0"} 65.0
+codsp_ai_execution_duration_seconds_bucket{agent_type="summarizer",le="5.0"} 202.0
+codsp_ai_execution_duration_seconds_bucket{agent_type="summarizer",le="10.0"} 202.0
+codsp_ai_execution_duration_seconds_bucket{agent_type="summarizer",le="30.0"} 202.0
+codsp_ai_execution_duration_seconds_bucket{agent_type="summarizer",le="60.0"} 202.0
+codsp_ai_execution_duration_seconds_bucket{agent_type="summarizer",le="120.0"} 202.0
+codsp_ai_execution_duration_seconds_bucket{agent_type="summarizer",le="300.0"} 202.0
+codsp_ai_execution_duration_seconds_bucket{agent_type="summarizer",le="+Inf"} 202.0
+codsp_ai_execution_duration_seconds_count{agent_type="summarizer"} 202.0
+codsp_ai_execution_duration_seconds_sum{agent_type="summarizer"} 250.48
 # HELP codsp_ai_execution_duration_seconds Duracion de ejecuciones de IA
 # TYPE codsp_ai_execution_duration_seconds histogram
 codsp_ai_execution_duration_seconds_bucket{agent_type="classifier",le="1.0"} 21.0
@@ -152,70 +152,70 @@ codsp_ai_execution_duration_seconds_sum{agent_type="classifier"} 99.76
 
 # HELP http_requests_total Total number of requests by method, status and handler.
 # TYPE http_requests_total counter
-http_requests_total{handler="/documents/process",method="POST",status="2xx"} 2292.0
+http_requests_total{handler="/documents/process",method="POST",status="2xx"} 2302.0
 http_requests_total{handler="/documents/process",method="POST",status="5xx"} 70.0
-http_requests_total{handler="/external/call/{service}/{endpoint}",method="GET",status="2xx"} 918.0
-http_requests_total{handler="/background/task",method="POST",status="2xx"} 420.0
-http_requests_total{handler="/ai/execute",method="POST",status="2xx"} 317.0
-http_requests_total{handler="/batch/operations",method="POST",status="2xx"} 561.0
+http_requests_total{handler="/external/call/{service}/{endpoint}",method="GET",status="2xx"} 922.0
+http_requests_total{handler="/background/task",method="POST",status="2xx"} 422.0
+http_requests_total{handler="/ai/execute",method="POST",status="2xx"} 318.0
+http_requests_total{handler="/batch/operations",method="POST",status="2xx"} 564.0
 
 # HELP http_request_duration_seconds Latency by handler for GitHub Pages static metrics
 # TYPE http_request_duration_seconds histogram
-http_request_duration_seconds_bucket{handler="/documents/process",method="POST",le="0.05"} 94.0
-http_request_duration_seconds_bucket{handler="/documents/process",method="POST",le="0.1"} 520.0
-http_request_duration_seconds_bucket{handler="/documents/process",method="POST",le="0.25"} 2126.0
-http_request_duration_seconds_bucket{handler="/documents/process",method="POST",le="0.5"} 2362.0
-http_request_duration_seconds_bucket{handler="/documents/process",method="POST",le="1.0"} 2362.0
-http_request_duration_seconds_bucket{handler="/documents/process",method="POST",le="2.5"} 2362.0
-http_request_duration_seconds_bucket{handler="/documents/process",method="POST",le="5.0"} 2362.0
-http_request_duration_seconds_bucket{handler="/documents/process",method="POST",le="+Inf"} 2362.0
-http_request_duration_seconds_count{handler="/documents/process",method="POST"} 2362.0
-http_request_duration_seconds_sum{handler="/documents/process",method="POST"} 451.142
+http_request_duration_seconds_bucket{handler="/documents/process",method="POST",le="0.05"} 95.0
+http_request_duration_seconds_bucket{handler="/documents/process",method="POST",le="0.1"} 522.0
+http_request_duration_seconds_bucket{handler="/documents/process",method="POST",le="0.25"} 2135.0
+http_request_duration_seconds_bucket{handler="/documents/process",method="POST",le="0.5"} 2372.0
+http_request_duration_seconds_bucket{handler="/documents/process",method="POST",le="1.0"} 2372.0
+http_request_duration_seconds_bucket{handler="/documents/process",method="POST",le="2.5"} 2372.0
+http_request_duration_seconds_bucket{handler="/documents/process",method="POST",le="5.0"} 2372.0
+http_request_duration_seconds_bucket{handler="/documents/process",method="POST",le="+Inf"} 2372.0
+http_request_duration_seconds_count{handler="/documents/process",method="POST"} 2372.0
+http_request_duration_seconds_sum{handler="/documents/process",method="POST"} 453.052
 # HELP http_request_duration_seconds Latency by handler for GitHub Pages static metrics
 # TYPE http_request_duration_seconds histogram
 http_request_duration_seconds_bucket{handler="/external/call/{service}/{endpoint}",method="GET",le="0.05"} 18.0
-http_request_duration_seconds_bucket{handler="/external/call/{service}/{endpoint}",method="GET",le="0.1"} 73.0
-http_request_duration_seconds_bucket{handler="/external/call/{service}/{endpoint}",method="GET",le="0.25"} 312.0
-http_request_duration_seconds_bucket{handler="/external/call/{service}/{endpoint}",method="GET",le="0.5"} 789.0
-http_request_duration_seconds_bucket{handler="/external/call/{service}/{endpoint}",method="GET",le="1.0"} 918.0
-http_request_duration_seconds_bucket{handler="/external/call/{service}/{endpoint}",method="GET",le="2.5"} 918.0
-http_request_duration_seconds_bucket{handler="/external/call/{service}/{endpoint}",method="GET",le="5.0"} 918.0
-http_request_duration_seconds_bucket{handler="/external/call/{service}/{endpoint}",method="GET",le="+Inf"} 918.0
-http_request_duration_seconds_count{handler="/external/call/{service}/{endpoint}",method="GET"} 918.0
-http_request_duration_seconds_sum{handler="/external/call/{service}/{endpoint}",method="GET"} 402.084
+http_request_duration_seconds_bucket{handler="/external/call/{service}/{endpoint}",method="GET",le="0.1"} 74.0
+http_request_duration_seconds_bucket{handler="/external/call/{service}/{endpoint}",method="GET",le="0.25"} 313.0
+http_request_duration_seconds_bucket{handler="/external/call/{service}/{endpoint}",method="GET",le="0.5"} 793.0
+http_request_duration_seconds_bucket{handler="/external/call/{service}/{endpoint}",method="GET",le="1.0"} 922.0
+http_request_duration_seconds_bucket{handler="/external/call/{service}/{endpoint}",method="GET",le="2.5"} 922.0
+http_request_duration_seconds_bucket{handler="/external/call/{service}/{endpoint}",method="GET",le="5.0"} 922.0
+http_request_duration_seconds_bucket{handler="/external/call/{service}/{endpoint}",method="GET",le="+Inf"} 922.0
+http_request_duration_seconds_count{handler="/external/call/{service}/{endpoint}",method="GET"} 922.0
+http_request_duration_seconds_sum{handler="/external/call/{service}/{endpoint}",method="GET"} 403.836
 # HELP http_request_duration_seconds Latency by handler for GitHub Pages static metrics
 # TYPE http_request_duration_seconds histogram
 http_request_duration_seconds_bucket{handler="/background/task",method="POST",le="0.05"} 0.0
 http_request_duration_seconds_bucket{handler="/background/task",method="POST",le="0.1"} 0.0
 http_request_duration_seconds_bucket{handler="/background/task",method="POST",le="0.25"} 34.0
-http_request_duration_seconds_bucket{handler="/background/task",method="POST",le="0.5"} 386.0
-http_request_duration_seconds_bucket{handler="/background/task",method="POST",le="1.0"} 420.0
-http_request_duration_seconds_bucket{handler="/background/task",method="POST",le="2.5"} 420.0
-http_request_duration_seconds_bucket{handler="/background/task",method="POST",le="5.0"} 420.0
-http_request_duration_seconds_bucket{handler="/background/task",method="POST",le="+Inf"} 420.0
-http_request_duration_seconds_count{handler="/background/task",method="POST"} 420.0
-http_request_duration_seconds_sum{handler="/background/task",method="POST"} 96.18
+http_request_duration_seconds_bucket{handler="/background/task",method="POST",le="0.5"} 388.0
+http_request_duration_seconds_bucket{handler="/background/task",method="POST",le="1.0"} 422.0
+http_request_duration_seconds_bucket{handler="/background/task",method="POST",le="2.5"} 422.0
+http_request_duration_seconds_bucket{handler="/background/task",method="POST",le="5.0"} 422.0
+http_request_duration_seconds_bucket{handler="/background/task",method="POST",le="+Inf"} 422.0
+http_request_duration_seconds_count{handler="/background/task",method="POST"} 422.0
+http_request_duration_seconds_sum{handler="/background/task",method="POST"} 96.638
 # HELP http_request_duration_seconds Latency by handler for GitHub Pages static metrics
 # TYPE http_request_duration_seconds histogram
 http_request_duration_seconds_bucket{handler="/ai/execute",method="POST",le="0.05"} 0.0
 http_request_duration_seconds_bucket{handler="/ai/execute",method="POST",le="0.1"} 6.0
 http_request_duration_seconds_bucket{handler="/ai/execute",method="POST",le="0.25"} 38.0
-http_request_duration_seconds_bucket{handler="/ai/execute",method="POST",le="0.5"} 133.0
-http_request_duration_seconds_bucket{handler="/ai/execute",method="POST",le="1.0"} 317.0
-http_request_duration_seconds_bucket{handler="/ai/execute",method="POST",le="2.5"} 317.0
-http_request_duration_seconds_bucket{handler="/ai/execute",method="POST",le="5.0"} 317.0
-http_request_duration_seconds_bucket{handler="/ai/execute",method="POST",le="+Inf"} 317.0
-http_request_duration_seconds_count{handler="/ai/execute",method="POST"} 317.0
-http_request_duration_seconds_sum{handler="/ai/execute",method="POST"} 296.078
+http_request_duration_seconds_bucket{handler="/ai/execute",method="POST",le="0.5"} 134.0
+http_request_duration_seconds_bucket{handler="/ai/execute",method="POST",le="1.0"} 318.0
+http_request_duration_seconds_bucket{handler="/ai/execute",method="POST",le="2.5"} 318.0
+http_request_duration_seconds_bucket{handler="/ai/execute",method="POST",le="5.0"} 318.0
+http_request_duration_seconds_bucket{handler="/ai/execute",method="POST",le="+Inf"} 318.0
+http_request_duration_seconds_count{handler="/ai/execute",method="POST"} 318.0
+http_request_duration_seconds_sum{handler="/ai/execute",method="POST"} 297.012
 # HELP http_request_duration_seconds Latency by handler for GitHub Pages static metrics
 # TYPE http_request_duration_seconds histogram
 http_request_duration_seconds_bucket{handler="/batch/operations",method="POST",le="0.05"} 0.0
 http_request_duration_seconds_bucket{handler="/batch/operations",method="POST",le="0.1"} 0.0
 http_request_duration_seconds_bucket{handler="/batch/operations",method="POST",le="0.25"} 34.0
-http_request_duration_seconds_bucket{handler="/batch/operations",method="POST",le="0.5"} 213.0
-http_request_duration_seconds_bucket{handler="/batch/operations",method="POST",le="1.0"} 471.0
-http_request_duration_seconds_bucket{handler="/batch/operations",method="POST",le="2.5"} 561.0
-http_request_duration_seconds_bucket{handler="/batch/operations",method="POST",le="5.0"} 561.0
-http_request_duration_seconds_bucket{handler="/batch/operations",method="POST",le="+Inf"} 561.0
-http_request_duration_seconds_count{handler="/batch/operations",method="POST"} 561.0
-http_request_duration_seconds_sum{handler="/batch/operations",method="POST"} 399.993
+http_request_duration_seconds_bucket{handler="/batch/operations",method="POST",le="0.5"} 214.0
+http_request_duration_seconds_bucket{handler="/batch/operations",method="POST",le="1.0"} 474.0
+http_request_duration_seconds_bucket{handler="/batch/operations",method="POST",le="2.5"} 564.0
+http_request_duration_seconds_bucket{handler="/batch/operations",method="POST",le="5.0"} 564.0
+http_request_duration_seconds_bucket{handler="/batch/operations",method="POST",le="+Inf"} 564.0
+http_request_duration_seconds_count{handler="/batch/operations",method="POST"} 564.0
+http_request_duration_seconds_sum{handler="/batch/operations",method="POST"} 402.132
